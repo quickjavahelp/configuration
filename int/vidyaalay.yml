@@ -1,0 +1,89 @@
+server:
+  port: 8089
+spring:
+  cloud:
+      aws:
+        key: AKIARVNTQG23YTVDKZRE
+        value: tWh46xs5miIhbK9PHCkZptjywxmQByI7EiDoMIC8
+        region: us_east_1
+        queue:
+           url:
+  config:
+     activate:
+        on-profile: dev
+  datasource:
+    username: root
+    password: root
+    driverClassName: org.postgresql.Driver
+    url: jdbc:postgresql://172.17.0.1:5431/school?currentSchema=vidayala
+    testOnBorrow: true
+    testWhileIdle: true
+    timeBetweenEvictionRunsMillis: 60000
+    minEvictableIdleTimeMillis: 30000
+    validationQuery: SELECT 1
+    max-active: 15
+    max-idle: 10
+    max-wait: 8000
+  jpa:
+    show-sql: true
+    hibernate.ddl-auto: update
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    generate-ddl: true
+    properties:
+      hibernate:
+        default_schema: vidayala
+  servlet:
+    multipart:
+       enabled: true
+       max-file-size: 2MB
+       max-request-size: 2MB
+  security:
+    enabled: false
+    #user:
+      #name: shivendra
+      #password: 123
+
+name: yml-file
+environment: dev
+enable: false
+servers:
+  - www.abc.test.com
+  - www.xyz.test.com
+trace: true
+security:
+    ignored: /**
+    basic:
+      enable: true
+application:
+      student:
+           file:
+             base:
+               path: D:\\test data
+      school:
+           file:
+             base:
+                path: D:\\test data
+      employee:
+            file:
+              base:
+                path: D:\\test data
+      other:
+           file:
+              base:
+                path: D:\\test data
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+  security:
+    enabled: false
+  port: 9n000
+logging:
+    level:
+       org:
+         apache:
+            tomcat: DEBUG
+            net: WARN
+       org.springframework: DEBUG
+       com.example: DEBUG
