@@ -1,1 +1,17 @@
-
+spring:
+  config:
+   activate:
+      on-profile: dev
+  mail:
+    host: smtp.gmail.com
+    port: 587
+    username: onlineshivendra@gmail.com
+    password: upmf kcoh llfr jcuv
+    properties:
+       mail:
+         smtp:
+           auth: true
+           starttls:
+             enable: true
+server:
+  port: 8089
