@@ -13,5 +13,8 @@ spring:
            auth: true
            starttls:
              enable: true
+eureka:
+  client:
+     service-url: http://localhost:8092
 server:
   port: 8091
