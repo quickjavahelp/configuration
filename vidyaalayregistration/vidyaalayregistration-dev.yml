@@ -10,8 +10,16 @@ spring:
   datasource:
     username: root
     password: root
-    driverClassName: org.postgresql.Driver
+    driver-class-name: org.postgresql.Driver
     url: jdbc:postgresql://172.17.0.1:5431/school?currentSchema=vidayala
+    hikari:
+      maximum-pool-size: 15
+      minimum-idle: 10
+      idle-timeout: 30000
+      max-lifetime: 600000
+      connection-timeout: 8000
+      validation-timeout: 3000
+      
     testOnBorrow: true
     testWhileIdle: true
     timeBetweenEvictionRunsMillis: 60000
@@ -22,7 +30,8 @@ spring:
     max-wait: 8000
   jpa:
     show-sql: true
-    hibernate.ddl-auto: update
+    hibernate:
+       ddl-auto: update
     database-platform: org.hibernate.dialect.PostgreSQLDialect
     generate-ddl: true
     properties:
