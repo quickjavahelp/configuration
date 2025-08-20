@@ -7,6 +7,32 @@ spring:
   config:
    activate:
       on-profile: dev
+  datasource:
+    username: root
+    password: root
+    driverClassName: org.postgresql.Driver
+    url: jdbc:postgresql://172.17.0.1:5431/school?currentSchema=vidayala
+    testOnBorrow: true
+    testWhileIdle: true
+    timeBetweenEvictionRunsMillis: 60000
+    minEvictableIdleTimeMillis: 30000
+    validationQuery: SELECT 1
+    max-active: 15
+    max-idle: 10
+    max-wait: 8000
+  jpa:
+    show-sql: true
+    hibernate.ddl-auto: update
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    generate-ddl: true
+    properties:
+      hibernate:
+        default_schema: vidayala
+  servlet:
+    multipart:
+       enabled: true
+       max-file-size: 2MB
+       max-request-size: 2MB      
 
 server:
   port: 8093     
