@@ -4,7 +4,7 @@ eureka:
      defaultZone: http://localhost:8092/eureka/
      
 server:
-  port: 8089
+  port: 8094
 spring:
   config:
     activate:
